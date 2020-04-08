@@ -1,5 +1,18 @@
 <div>
-  <div>{{user.id}}</div>
-  <div>{{user.name}}</div>
-  <div>{{user.username}}</div>
+  <h3>
+    {{user.id}}
+    <h4>{{user.name}}</h4>
+    {{user.username}}
+  </h3>
+  <ul>
+    <li *ngFor="let post of user.posts">
+      {{post.body}}
+      <ul>
+        <li *ngFor="let comment of post.comments">
+          {{comment.body}}
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
+<hr>
